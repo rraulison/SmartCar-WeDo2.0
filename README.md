@@ -2,6 +2,11 @@
 
 This project implements a computer vision-based control system for a LEGO WeDo 2.0 SmartCar. It uses MediaPipe for hand/pose tracking and Bleak for Bluetooth Low Energy (BLE) communication with the WeDo 2.0 Hub.
 
+## Inspiration
+This project is inspired by the **LEGO WeDo 2.0 Tank** created by **Yoshihito Isogawa**. 
+You can watch the original build here: [LEGO WeDo 2.0 Tank (YouTube)](https://www.youtube.com/watch?v=FXIxTJCT5ew)
+
+
 ## Features
 - **Computer Vision Control**: Control motor speed by moving your hands in front of the camera.
 - **Continuous Control**: Smooth speed transitions and power budgeting.
