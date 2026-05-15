@@ -32,6 +32,29 @@ You can watch the original build here: [LEGO WeDo 2.0 Tank (YouTube)](https://ww
    pip install -r requirements.txt
    ```
 
+## Configuration
+
+Before running the project, you need to identify your LEGO WeDo 2.0 Hub's Bluetooth address and name.
+
+1. Run this command to scan for nearby BLE devices:
+   ```bash
+   python -c "
+   import asyncio
+   from bleak import BleakScanner
+   async def scan():
+       devs = await BleakScanner.discover(timeout=5)
+       for d in devs:
+           print(d.address, d.name)
+   asyncio.run(scan())
+   "
+   ```
+
+2. Open `main.py` and update the following constants with your hub's details:
+   ```python
+   HUB_ADDRESS = "XX:XX:XX:XX:XX:XX"  # Replace with your Hub's address
+   HUB_NAME = "Smart Hub"             # Replace with your Hub's name
+   ```
+
 ## Usage
 
 Run the main script:
