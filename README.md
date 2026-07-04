@@ -23,7 +23,7 @@ You can watch the original build here: [LEGO WeDo 2.0 Tank (YouTube)](https://ww
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/SmartCar-WeDo2.0.git
+   git clone https://github.com/rraulison/SmartCar-WeDo2.0.git
    cd SmartCar-WeDo2.0
    ```
 
@@ -61,6 +61,22 @@ Run the main script:
 ```bash
 python main.py
 ```
+
+### Joystick Control
+
+Alternatively, you can control the SmartCar using a Bluetooth joystick or gamepad:
+```bash
+python joy_event.py
+```
+
+This script consolidates all joystick control logic into a single utility that supports:
+- **Auto-Detection**: Automatically determines whether to use the legacy `joydev` (`/dev/input/js*`) driver or the direct `evdev` (`/dev/input/event*`) event interface.
+- **Arcade Controls (Inverted)**: Steer using the left analog stick:
+  - **Y-axis**: Pull down to go forward, push up to go backward (inverted).
+  - **X-axis**: Push left to turn right, push right to turn left (inverted).
+- **Interactive Mapping**: Run with `--debug` to print raw events, buttons, and axes to customize configurations.
+- **Device Listing**: Use `--list-devices` to list all available linux input event devices.
+
 
 ### Command Line Arguments
 - `--dither`: Choose between `sigma`, `spread`, or `discrete` (default: `sigma`).
